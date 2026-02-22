@@ -51,47 +51,48 @@ function App() {
 
   const teamMembers = [
     {
-      name: "Emerson Schleifer",
+      name: "Magesh Mariappan",
       role: "Co-founder & CEO",
       description: "Leads vision and growth with over a decade of experience in real estate and digital innovation.",
       image: imgBlogPostImage1,
+      linkedin: "https://www.linkedin.com/in/magesh-mariappan/"
     },
     {
-      name: "Madelyn Vetrovs",
+      name: "Omansh Arora",
       role: "Co-founder & COO",
       description: "Oversees global operations and strategy, building seamless systems that empower agents and clients.",
       image: imgBlogPostImage2,
     },
     {
-      name: "Omar Dorwart",
+      name: "Md Baber Yaseen",
       role: "Chief Technology Officer",
       description: "Builds global alliances with real estate agencies, investors, and proptech innovators.",
       image: imgBlogPostImage3,
     },
     {
-      name: "Sophia Nguyen",
+      name: "Narasimha Reddy",
       role: "Head of Marketing",
       description: "Crafts compelling stories and campaigns that position Kizuna as a market innovator.",
       image: imgBlogPostImage4,
     },
-    {
-      name: "Alex Petersen",
-      role: "Head of Product",
-      description: "Designs user experiences that make complex transactions feel effortless and intuitive.",
-      image: imgBlogPostImage5,
-    },
-    {
-      name: "Madelyn Vetrovs",
-      role: "Lead Software Engineer",
-      description: "Architects reliable systems that keep Kizuna fast, secure, and scalable across markets.",
-      image: imgBlogPostImage6,
-    },
-    {
-      name: "Nadia Petrova",
-      role: "Head of Communications",
-      description: "Manages media relations and ensures Kizuna's messaging resonates globally.",
-      image: imgBlogPostImage7,
-    },
+    // {
+    //   name: "Alex Petersen",
+    //   role: "Head of Product",
+    //   description: "Designs user experiences that make complex transactions feel effortless and intuitive.",
+    //   image: imgBlogPostImage5,
+    // },
+    // {
+    //   name: "Madelyn Vetrovs",
+    //   role: "Lead Software Engineer",
+    //   description: "Architects reliable systems that keep Kizuna fast, secure, and scalable across markets.",
+    //   image: imgBlogPostImage6,
+    // },
+    // {
+    //   name: "Nadia Petrova",
+    //   role: "Head of Communications",
+    //   description: "Manages media relations and ensures Kizuna's messaging resonates globally.",
+    //   image: imgBlogPostImage7,
+    // },
   ];
 
   const principles = [
@@ -165,18 +166,22 @@ function App() {
           >
             <button
               onClick={() => scrollToSection("hero")}
-              className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#00345c] cursor-pointer hover:text-[#008bf6] transition-colors duration-200"
+              className="flex items-center gap-[8px] font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#00345c] cursor-pointer hover:text-[#008bf6] transition-colors duration-200 group whitespace-nowrap"
             >
+              <svg className="w-[24px] h-[24px]" fill="none" viewBox="0 0 30 30">
+                <path d={svgPaths.p22797f00} fill="#00345c" className="group-hover:fill-[#008bf6] transition-colors duration-200" />
+                <path clipRule="evenodd" d={svgPaths.p22081980} fill="#00345c" fillRule="evenodd" className="group-hover:fill-[#008bf6] transition-colors duration-200" />
+              </svg>
               CYBER AI FOUNDATION
             </button>
             <div className="bg-[#00345c] h-[16px] w-px" />
             <div className="flex gap-[20px] items-center">
               {[
                 { label: "ABOUT", id: "hero" },
-                { label: "OUR STORY", id: "story" },
-                { label: "MISSION", id: "mission" },
-                { label: "PRINCIPLES", id: "principles" },
-                { label: "TEAM", id: "team" },
+                { label: "PROPERTIES", id: "properties" },
+                { label: "BLOG", id: "blog" },
+                { label: "AGENTS", id: "team" },
+                { label: "SUBMIT PROPERTY", id: "contact" },
               ].map((link, i) => (
                 <motion.button
                   key={link.id}
@@ -184,7 +189,7 @@ function App() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
                   onClick={() => scrollToSection(link.id)}
-                  className="font-['Inter:Medium',sans-serif] font-medium text-[14px] text-[#00345c] tracking-[-0.14px] hover:text-[#008bf6] transition-colors duration-200 cursor-pointer"
+                  className="font-['Inter:Semi_Bold',sans-serif] font-bold text-[14px] text-[#00345c] tracking-[-0.14px] hover:text-[#008bf6] transition-colors duration-200 cursor-pointer"
                 >
                   {link.label}
                 </motion.button>
@@ -266,67 +271,69 @@ function App() {
           />
         </div>
 
-        <div className="relative max-w-[832px] mx-auto pt-[117px] px-[60px] z-10">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="inline-block"
-          >
-            <div className="flex items-center justify-center px-[12px] py-[5px] rounded-[50px] mb-[56px] bg-white/20 backdrop-blur-sm">
-              <p className="font-['JetBrains_Mono:Medium',sans-serif] font-medium text-[12px] text-[#00345c] uppercase">
-                ABOUT US
-              </p>
-            </div>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.1] text-[#00345c] text-[60px] tracking-[-2.4px] mb-[16px]"
-          >
-            Building Open Infrastructure for Secure and Ethical AI
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="font-['Inter:Medium',sans-serif] font-medium leading-[1.4] text-[24px] text-[rgba(0,52,92,0.8)] tracking-[-0.48px] mb-[56px]"
-          >
-            The Cyber AI Foundation empowers a global collective of researchers, engineers, and defenders to build AI systems that are secure and ethical by design and to advance AI driven defense and adversarial resilience.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="flex items-center gap-[2px]"
-          >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-[#008bf6] px-[20px] py-[12px] h-[56px] rounded-[8px] font-['JetBrains_Mono:Medium',sans-serif] font-medium text-[14px] text-white uppercase"
+        <div className="relative max-w-[1440px] mx-auto pt-[117px] px-[60px] z-10 w-full">
+          <div className="max-w-[832px]">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="inline-block"
             >
-              Explore Our Projects
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.1, rotate: 360 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ rotate: { duration: 0.6 } }}
-              className="bg-[#008bf6] p-[16px] size-[56px] rounded-[8px] flex items-center justify-center"
+              <div className="flex items-center justify-center px-[12px] py-[5px] rounded-[50px] mb-[56px] bg-white/20 backdrop-blur-sm">
+                <p className="font-['JetBrains_Mono:Medium',sans-serif] font-medium text-[12px] text-[#00345c] uppercase">
+                  ABOUT US
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.1] text-[#00345c] text-[60px] tracking-[-2.4px] mb-[16px]"
             >
-              <svg className="w-[24px] h-[24px]" fill="none" viewBox="0 0 24 24">
-                <path
-                  clipRule="evenodd"
-                  d={svgPaths.p295ed780}
-                  fill="white"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </motion.button>
-          </motion.div>
+              Building Open Infrastructure for Secure and Ethical AI
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="font-['Inter:Medium',sans-serif] font-medium leading-[1.4] text-[24px] text-[rgba(0,52,92,0.8)] tracking-[-0.48px] mb-[56px]"
+            >
+              The Cyber AI Foundation empowers a global collective of researchers, engineers, and defenders to build AI systems that are secure and ethical by design and to advance AI driven defense and adversarial resilience.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+              className="flex items-center gap-[2px]"
+            >
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-[#008bf6] px-[20px] py-[12px] h-[56px] rounded-[8px] font-['JetBrains_Mono:Medium',sans-serif] font-medium text-[14px] text-white uppercase"
+              >
+                Explore Our Project
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.1, rotate: 360 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ rotate: { duration: 0.6 } }}
+                className="bg-[#008bf6] p-[16px] size-[56px] rounded-[8px] flex items-center justify-center"
+              >
+                <svg className="w-[24px] h-[24px]" fill="none" viewBox="0 0 24 24">
+                  <path
+                    clipRule="evenodd"
+                    d={svgPaths.p295ed780}
+                    fill="white"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </motion.button>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -341,7 +348,7 @@ function App() {
         >
           <div className="inline-block px-[12px] py-[5px] rounded-[50px] shadow-[0px_3px_0.1px_0px_rgba(0,139,246,0.15)] mb-[40px] bg-gradient-to-r from-white to-[#eff4fb] relative">
             <p className="font-['JetBrains_Mono:Medium',sans-serif] font-medium text-[12px] text-[#00345c] uppercase relative">
-              Our Story
+              OUR STORY
             </p>
           </div>
           <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.04] text-[#00345c] text-[48px] tracking-[-1.44px]">
@@ -395,8 +402,8 @@ function App() {
           className="flex flex-col items-center gap-[40px]"
         >
           <div className="inline-block px-[12px] py-[5px] rounded-[50px] shadow-[0px_3px_0.1px_0px_rgba(0,139,246,0.15)] bg-gradient-to-r from-white to-[#eff4fb] relative">
-            <p className="font-['JetBrains_Mono:Bold',sans-serif] font-bold text-[14px] text-[#00345c] uppercase relative">
-              Our Mission
+            <p className="font-['JetBrains_Mono:Medium',sans-serif] font-medium text-[12px] text-[#00345c] uppercase relative">
+              OUR MISSION
             </p>
           </div>
           <motion.p
@@ -421,8 +428,8 @@ function App() {
             transition={{ duration: 0.6 }}
           >
             <div className="inline-block px-[12px] py-[5px] rounded-[50px] shadow-[0px_3px_0.1px_0px_rgba(0,139,246,0.15)] mb-[40px] bg-gradient-to-r from-white to-[#eff4fb] relative">
-              <p className="font-['JetBrains_Mono:Bold',sans-serif] font-bold text-[14px] text-[#00345c] uppercase relative">
-                Our PILLARS
+              <p className="font-['JetBrains_Mono:Medium',sans-serif] font-medium text-[12px] text-[#00345c] uppercase relative">
+                OUR PILLARS
               </p>
             </div>
             <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.04] text-[#00345c] text-[48px] tracking-[-1.44px] max-w-[530px]">
@@ -472,8 +479,8 @@ function App() {
           className="mb-[60px]"
         >
           <div className="inline-block px-[12px] py-[5px] rounded-[50px] shadow-[0px_3px_0.1px_0px_rgba(0,139,246,0.15)] mb-[40px] bg-gradient-to-r from-white to-[#eff4fb] relative">
-            <p className="font-['JetBrains_Mono:Bold',sans-serif] font-bold text-[14px] text-[#00345c] uppercase relative">
-              Meet our team
+            <p className="font-['JetBrains_Mono:Medium',sans-serif] font-medium text-[12px] text-[#00345c] uppercase relative">
+              MEET OUR TEAM
             </p>
           </div>
           <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.04] text-[#00345c] text-[48px] tracking-[-1.44px]">
@@ -508,9 +515,11 @@ function App() {
                   whileHover={{ opacity: 1 }}
                   className="absolute top-4 right-4 bg-white/90 p-[8px] rounded-full"
                 >
-                  <svg className="w-[20px] h-[20px]" fill="none" viewBox="0 0 24 24">
-                    <path d={svgPaths.p2883f480} fill="#00345C" />
-                  </svg>
+                  <a href={member.linkedin || "#"} target="_blank" rel="noopener noreferrer">
+                    <svg className="w-[20px] h-[20px]" fill="none" viewBox="0 0 24 24">
+                      <path d={svgPaths.p2883f480} fill="#00345C" />
+                    </svg>
+                  </a>
                 </motion.div>
               </motion.div>
 
@@ -531,9 +540,11 @@ function App() {
                     whileHover={{ scale: 1.2, rotate: 15 }}
                     className="size-[24px] cursor-pointer"
                   >
-                    <svg className="block size-full" fill="none" viewBox="0 0 24 24">
-                      <path d={svgPaths.p2883f480} fill="#00345C" />
-                    </svg>
+                    <a href={member.linkedin || "#"} target="_blank" rel="noopener noreferrer">
+                      <svg className="block size-full" fill="none" viewBox="0 0 24 24">
+                        <path d={svgPaths.p2883f480} fill="#00345C" />
+                      </svg>
+                    </a>
                   </motion.div>
                 </div>
                 <p className="font-['Inter:Medium',sans-serif] font-medium leading-[1.4] text-[14px] text-[rgba(0,52,92,0.8)] tracking-[-0.14px]">
@@ -545,68 +556,75 @@ function App() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="max-w-[1320px] mx-auto px-[60px] py-[120px] text-center"
-        id="contact"
-      >
-        <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.1] text-[#00345c] text-[60px] tracking-[-2.4px] mb-[40px]">
-          Contribute to secure AI infrastructure
-        </h2>
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-[#008bf6] px-[32px] py-[16px] rounded-[8px] font-['JetBrains_Mono:Medium',sans-serif] font-medium text-[16px] text-white uppercase inline-flex items-center gap-[8px]"
-        >
-          <span>Join Us</span>
-          <motion.div
-            whileHover={{ x: 5 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <svg className="w-[24px] h-[24px]" fill="none" viewBox="0 0 24 24">
-              <path clipRule="evenodd" d={svgPaths.p83a6400} fill="white" fillRule="evenodd" />
-            </svg>
-          </motion.div>
-        </motion.button>
+      {/* Footer / CTA Section */}
+      <footer className="max-w-[1440px] mx-auto px-[60px] py-[80px]" id="contact">
+        <div className="flex flex-col gap-[100px]">
+          {/* Top Row: CTA */}
+          <div className="flex items-end justify-between">
+            <div className="flex flex-col items-start gap-[40px]">
+              <div className="inline-block px-[12px] py-[5px] rounded-[50px] shadow-[0px_3px_0.1px_0px_rgba(0,139,246,0.15)] bg-gradient-to-r from-white to-[#eff4fb] relative">
+                <p className="font-['JetBrains_Mono:Medium',sans-serif] font-medium text-[12px] text-[#00345c] uppercase border border-blue-50/100 rounded-[50px]">
+                  TALK TO US TODAY
+                </p>
+              </div>
+              <div className="flex items-center gap-[2px]">
+                <button className="bg-[#008bf6] px-[20px] py-[12px] h-[56px] rounded-[8px] font-['JetBrains_Mono:Medium',sans-serif] font-medium text-[14px] text-white uppercase">
+                  Contact Us
+                </button>
+                <button className="bg-[#008bf6] p-[16px] size-[56px] rounded-[8px] flex items-center justify-center">
+                  <svg className="w-[24px] h-[24px]" fill="none" viewBox="0 0 24 24">
+                    <path clipRule="evenodd" d={svgPaths.p83a6400} fill="white" fillRule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+            </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="flex items-center justify-center gap-[16px] mt-[40px]"
-        >
-          {[
-            { icon: svgPaths.p2883f480, label: "LinkedIn" },
-            { icon: svgPaths.p38deab00, label: "X" },
-            { icon: svgPaths.discord, label: "Discord" },
-            { icon: svgPaths.p35ef6100, label: "YouTube" },
-          ].map((social, index) => (
-            <motion.a
-              key={index}
-              href="#"
-              whileHover={{ scale: 1.2, y: -5 }}
-              whileTap={{ scale: 0.9 }}
-              className="size-[40px] flex items-center justify-center bg-[#eff4fb] rounded-full hover:bg-[#008bf6] transition-colors duration-300 group"
-            >
-              <svg className="w-[20px] h-[20px]" fill="none" viewBox="0 0 24 24">
-                <path d={social.icon} fill="#00345C" className="group-hover:fill-white transition-colors duration-300" />
+            <div className="flex flex-col items-end">
+              <h2 className="font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[1.1] text-[#00345c] text-[60px] tracking-[-2.4px] text-right">
+                Contribute to secure <br /> AI infrastructure
+              </h2>
+            </div>
+          </div>
+
+          {/* Bottom Row: Socials & Logo */}
+          <div className="flex items-center justify-between pt-[40px]">
+            <div className="flex items-center gap-[16px]">
+              {[
+                { icon: svgPaths.p35ef6100, label: "YouTube" },
+                { icon: svgPaths.p38deab00, label: "X" },
+                { icon: svgPaths.p2883f480, label: "LinkedIn" },
+                { icon: "instagram", label: "Instagram" }
+              ].map((social, index) => (
+                <a
+                  key={index}
+                  href="#"
+                  className="size-[40px] flex items-center justify-center bg-[#f4f7fc] rounded-full hover:bg-[#008bf6] transition-colors duration-300 group"
+                >
+                  {social.icon === "instagram" ? (
+                    <svg className="w-[20px] h-[20px] group-hover:stroke-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="#00345c" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                  ) : (
+                    <svg className="w-[20px] h-[20px]" fill="none" viewBox="0 0 24 24">
+                      <path d={social.icon} fill="#00345C" className="group-hover:fill-white transition-colors duration-300" />
+                    </svg>
+                  )}
+                </a>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-[10px]">
+              <svg className="w-[32px] h-[32px]" fill="none" viewBox="0 0 30 30">
+                <path d={svgPaths.p22797f00} fill="#008bf6" />
+                <path clipRule="evenodd" d={svgPaths.p22081980} fill="#008bf6" fillRule="evenodd" />
               </svg>
-            </motion.a>
-          ))}
-        </motion.div>
-      </motion.section>
-
-      {/* Footer */}
-      <footer className="bg-[#00345c] text-white py-[40px]">
-        <div className="max-w-[1320px] mx-auto px-[60px] text-center">
-          <p className="font-['Inter:Medium',sans-serif] font-medium text-[14px] opacity-80">
-            © 2026 Cyber AI Foundation. Building secure infrastructure for ethical AI.
-          </p>
+              <span className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[20px] text-[#008bf6] whitespace-nowrap">
+                CYBER AI FOUNDATION
+              </span>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
